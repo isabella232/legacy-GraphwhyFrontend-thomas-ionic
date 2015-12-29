@@ -3,6 +3,7 @@ angular.module('main', [
   'ionic',
   'ngCordova',
   'ui.router',
+  'nvd3'
   // TODO: load other modules selected during generation
 ])
 .config(function ($stateProvider, $urlRouterProvider) {
@@ -15,7 +16,7 @@ angular.module('main', [
       url: '/main',
       abstract: true,
       templateUrl: 'main/templates/menu.html',
-      controller: 'MenuCtrl as menu'
+      //controller: 'MenuCtrl as menu'
     })
       .state('main.signup', {
         url: '/signup',
@@ -49,16 +50,16 @@ angular.module('main', [
         views: {
           'pageContent': {
             templateUrl: 'main/templates/votes.html',
-            // controller: '<someCtrl> as ctrl'
+            controller: 'MenuCtrl as menu'
           }
         }
       })
-      .state('main.users', {
-        url: '/users',
+      .state('main.profile', {
+        url: '/profile',
         views: {
           'pageContent': {
-            templateUrl: 'main/templates/users.html',
-            controller: 'DebugCtrl as ctrl'
+            templateUrl: 'main/templates/profile.html',
+            //controller: 'DebugCtrl as ctrl'
           }
         }
       });

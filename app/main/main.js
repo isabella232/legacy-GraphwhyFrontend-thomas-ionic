@@ -4,7 +4,6 @@ angular.module('main', [
   'ngCordova',
   'ui.router',
   'nvd3'
-  // TODO: load other modules selected during generation
 ])
 .config(function ($stateProvider, $urlRouterProvider) {
 

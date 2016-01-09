@@ -40,7 +40,16 @@ angular.module('main', [
         views: {
           'pageContent': {
             templateUrl: 'main/templates/questions.html',
-            // controller: '<someCtrl> as ctrl'
+            controller: 'QuestionsCtrl'
+          }
+        }
+      })
+      .state('main.question', {
+        url: '/question/:id',
+        views: {
+          'pageContent': {
+            templateUrl: 'main/templates/question.html',
+            controller: 'QuestionCtrl'
           }
         }
       })

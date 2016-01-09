@@ -1,0 +1,24 @@
+<ion-view view-title="List">
+  <ion-content>
+
+    <!-- content goes here -->
+    <ion-list>
+      <ion-item
+        class="item-remove-animate item-avatar"
+        type="item-text-wrap"
+        ui-sref="main.listDetail">
+ 
+        <h2>{{question.title}}</h2>
+        
+         
+      </ion-item>
+            <ion-list>
+        <ion-radio ng-model="choice" ng-value="'A'" 
+        ng-repeat="v in question.options">{{v}}</ion-radio>
+      </ion-list>
+    </ion-list>
+    <div class="bar bar-footer bar-balanced" ng-click="next()">
+      <div>Next</div>
+    </div>
+  </ion-content>
+</ion-view>

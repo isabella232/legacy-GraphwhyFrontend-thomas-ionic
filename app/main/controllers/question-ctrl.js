@@ -8,22 +8,29 @@ angular.module('main')
 
   var question = [
     {
-      title: 'How many dogs do you own?',
-      options: ['1 dog', '2 dog', '3 dog', '4 dog', '5 dog']
+      title: 'Are you concerned about the US national debt?',
+      options: ['Yes, absolutely', 'Yes', 'No', 'No, not at all', 'none of the above']
     },
     {
-      title: 'How many cats do you own?',
-      options: ['1 cat', '2 cat', '3 cat', '4 cat', '5 cat']
+      title: 'Have you learned about US national debt in a classroom?',
+      options: ['yes, absolutely', 'yes', 'no', 'No, not at all', 'none of the above']
     },
     {
-      title: 'How many elephants do you own?',
-      options: ['1 elephant', '2 elephants', '3 elephants', '4 elephants', '5 elephants']
+      title: 'Do you trust federal government policy makers?',
+      options: ['yes, absolutely', 'yes', 'no', 'No, not at all', 'none of the above']
     },
     {
-      title: 'How many mice do you own?',
-      options: ['1 mouse', '2 mice', '3 mice', '4 mice', '5 mice']
-    }
-
+      title: 'Do you support legalizing and taxing all recreational drugs?',
+      options: ['yes, absolutely', 'yes', 'no', 'No, not at all', 'none of the above']
+    },
+    {
+      title: 'Do you know approximate amount of US national debt?',
+      options: ['yes, absolutely', 'yes', 'no', 'No, not at all', 'none of the above']
+    },
+    {
+      title: 'Do you know why the US is in debt?',
+      options: ['yes, absolutely', 'yes', 'no', 'No, not at all', 'none of the above']
+    },
   ];
   $scope.question = question[$scope.counter];
   $scope.next = function () {

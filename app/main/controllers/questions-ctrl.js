@@ -4,44 +4,26 @@ angular.module('main')
   //getrequest:GETQUESTIONS
   var Questions = [
     {
-      title: 'dog',
-      description: 'cats',
+      title: 'The US national debt',
+      description: '6 question survey conducted on the De Anza College campus for Up to Us',
       id: '3232',
       finished: true
     },
     {
-      title: 'cat',
-      description: 'dogs',
-      id: '3232',
-      finished: true
-    },
-    {
-      title: 'mouse',
-      description: 'description',
+      title: 'Green Party',
+      description: 'Coming Soon, Hosted by the De Anza Green Party',
       id: '3232',
       finished: false
     },
     {
-      title: 'elephant',
-      description: 'cock',
+      title: 'Libertarian Party',
+      description: 'Coming Soon, Hosted by the Libertarian Party',
       id: '3232',
       finished: false
     },
     {
-      title: 'penis',
-      description: 'breath',
-      id: '3232',
-      finished: false
-    },
-    {
-      title: 'fuck',
-      description: 'beaners',
-      id: '3232',
-      finished: false
-    },
-    {
-      title: 'niggers',
-      description: 'spics',
+      title: 'The De Anza Student Body',
+      description: 'Coming Soon, Hosted by the De Anza Network',
       id: '3232',
       finished: false
     }

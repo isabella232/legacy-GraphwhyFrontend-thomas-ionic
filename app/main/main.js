@@ -21,9 +21,8 @@ angular.module('main', [
 .config(function ($stateProvider, $urlRouterProvider) {
 
   // ROUTING with ui.router
-  $urlRouterProvider.otherwise('/main/signup');
+  $urlRouterProvider.otherwise('/main/profile');
   $stateProvider
-    // this state is placed in the <ion-nav-view> in the index.html
     .state('main', {
       url: '/main',
       abstract: true,
@@ -57,21 +56,21 @@ angular.module('main', [
           }
         }
       })
+      .state('main.finish', {
+        url: '/question/:id/finish',
+        views: {
+          'pageContent': {
+            templateUrl: 'main/templates/finish.html',
+            controller: 'MenuCtrl as menu'
+          }
+        }
+      })
       .state('main.question', {
-        url: '/question/:id',
+        url: '/question/:id/:qnum',
         views: {
           'pageContent': {
             templateUrl: 'main/templates/question.html',
             controller: 'QuestionCtrl'
-          }
-        }
-      })
-      .state('main.votes', {
-        url: '/votes',
-        views: {
-          'pageContent': {
-            templateUrl: 'main/templates/votes.html',
-            controller: 'MenuCtrl as menu'
           }
         }
       })
@@ -80,7 +79,7 @@ angular.module('main', [
         views: {
           'pageContent': {
             templateUrl: 'main/templates/profile.html',
-            //controller: 'DebugCtrl as ctrl'
+            controller: 'MenuCtrl'
           }
         }
       });

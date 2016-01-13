@@ -1,12 +1,12 @@
 'use strict';
 angular.module('main')
-.controller('QuestionCtrl', function ($scope, $location) {
+.controller('QuestionCtrl', function ($scope, $location, $rootScope, $stateParams) {
   //var id = $stateParams.id; //use to do request
   //getrequest:GETQUESTION
 
-  $scope.counter = 0;
+  $rootScope.counter++;
 
-  var question = [
+  var questions = [
     {
       title: 'Are you concerned about the US national debt?',
       options: ['Yes, absolutely', 'Yes', 'No', 'No, not at all', 'none of the above']
@@ -30,15 +30,15 @@ angular.module('main')
     {
       title: 'Do you know why the US is in debt?',
       options: ['yes, absolutely', 'yes', 'no', 'No, not at all', 'none of the above']
-    },
-  ];
-  $scope.question = question[$scope.counter];
-  $scope.next = function () {
-    if ( $scope.counter > question.length - 2 ) {
-      $location.path( 'main/questions' );
-    } else {
-      $scope.question = question[ ++$scope.counter ];
     }
-  };
+  ];
+  $scope.counter = parseInt($stateParams.qnum)+1;
+  if($scope.counter>questions.length){
+    $location.path( "/main/question/graphwhy/finish" );
+  }
+  else{
+    $scope.question = questions[$scope.counter-2];
+  }
+
 });
 

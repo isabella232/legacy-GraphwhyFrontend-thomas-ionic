@@ -5,6 +5,19 @@ angular.module('main', [
   'ui.router',
   'nvd3'
 ])
+.run( function ($rootScope) {
+  var token = window.location.hash;
+  var string = 'access_token';
+  if ( token.indexOf(string) > -1 ) {
+    var num = token.indexOf( '=' );
+    token = token.substring( num + 1 );
+    num = token.indexOf( '&' );
+    token = token.substring( 0, num );
+    $rootScope.token = token;
+  } else {
+    //forward to reg
+  }
+})
 .config(function ($stateProvider, $urlRouterProvider) {
 
   // ROUTING with ui.router
@@ -15,14 +28,14 @@ angular.module('main', [
       url: '/main',
       abstract: true,
       templateUrl: 'main/templates/menu.html',
-      //controller: 'MenuCtrl as menu'
+      controller: 'AllCtrl'
     })
       .state('main.signup', {
         url: '/signup',
         views: {
           'pageContent': {
             templateUrl: 'main/templates/signup.html',
-            // controller: '<someCtrl> as ctrl'
+            controller: 'MenuCtrl'
           }
         }
       })

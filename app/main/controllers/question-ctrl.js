@@ -40,7 +40,7 @@ angular.module('main')
       options: ['yes, absolutely', 'yes, mostly', 'yes, slightly', 'No', 'none of the above']
     },
     {
-      title: 'Do you support stricter tax laws for US corporations',
+      title: 'Would you boycott companies that exploit tax loopholes?',
       options: ['yes, absolutely', 'yes, mostly', 'yes, slightly', 'No', 'none of the above']
     },
     {

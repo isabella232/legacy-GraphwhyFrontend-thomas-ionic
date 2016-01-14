@@ -1,18 +1,17 @@
-<ion-view view-title="List">
+<ion-view view-title="US National Debt">
   <ion-content>
 
     <!-- content goes here -->
-    <ion-list class="list list-inset">
+    <ion-list class="">
       <ion-item
-        class="item-remove-animate item-avatar"
+        class="item-remove-animate item-avatar item-text-wrap"
         type="item-text-wrap"
         ui-sref="main.listDetail">
         {{counter-1}}
         <h2>{{question.title}}</h2>
-        
-         
       </ion-item>
-            <ion-list>
+
+      <ion-list class="list list-inset">
         <ion-radio ng-model="choice" ng-value="'A'" 
         ng-repeat="v in question.options"
         ui-sref="main.question({id:'graphwhy',qnum:counter})"

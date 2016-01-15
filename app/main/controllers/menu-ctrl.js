@@ -1,22 +1,21 @@
 'use strict';
 angular.module('main')
-.controller('MenuCtrl', function ( $scope, $http, $rootScope, $location ) {
+.controller('MenuCtrl', function ( $scope, $http, $rootScope, $location, Facebook ) {
 
 
   $scope.loginFB = function () {
-    var id = '872274976224449';
-    var url = encodeURIComponent("http://2ba8a84a.ngrok.io");
-    window.location = 'https://www.facebook.com/dialog/oauth?client_id=' + id + '&redirect_uri=' + url + '&response_type=token&scope=email';
+    Facebook.login(function(response){
+      Facebook.getLoginStatus(function(response2) {
+        if(response2.status === 'connected') {
+          $location.path( '/main/question/graphwhy/1' );
+        } else {
+          //$location.path( '/main/question/profile' );
+          $location.path( '/main/question/graphwhy/1' );
+        }
+      });
+    })
   };
-  $scope.successFB = function (token) {
-    var str = 'https://graph.facebook.com/me?access_token=' + token + '&fields=email';
-    $http.get( str ).then( function (data) {
-      $rootScope.userdata = data.data;
-      $rootScope.counter = 0;
-      $location.path( "/main/question/graphwhy/1" );
-    });
-  };
-  if($rootScope.token){
-    $scope.successFB($rootScope.token);
-  }
 });
+
+
+

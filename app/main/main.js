@@ -3,24 +3,14 @@ angular.module('main', [
   'ionic',
   'ngCordova',
   'ui.router',
-  'nvd3'
+  'facebook'
 ])
 .run( function ($rootScope) {
-  var token = window.location.hash;
-  var string = 'access_token';
-  if ( token.indexOf(string) > -1 ) {
-    var num = token.indexOf( '=' );
-    token = token.substring( num + 1 );
-    num = token.indexOf( '&' );
-    token = token.substring( 0, num );
-    $rootScope.token = token;
-  } else {
-    //forward to reg
-  }
-})
-.config(function ($stateProvider, $urlRouterProvider) {
 
+})
+.config(function ($stateProvider, $urlRouterProvider, FacebookProvider) {
   // ROUTING with ui.router
+  FacebookProvider.init('872274976224449');
   $urlRouterProvider.otherwise('/main/profile');
   $stateProvider
     .state('main', {
@@ -33,8 +23,8 @@ angular.module('main', [
         url: '/signup',
         views: {
           'pageContent': {
-            templateUrl: 'main/templates/signup.html',
-            controller: 'MenuCtrl'
+            templateUrl: 'main/templates/signup.html'
+            //controller: 'MenuCtrl'
           }
         }
       })
@@ -60,8 +50,8 @@ angular.module('main', [
         url: '/question/:id/finish',
         views: {
           'pageContent': {
-            templateUrl: 'main/templates/finish.html',
-            controller: 'MenuCtrl as menu'
+            templateUrl: 'main/templates/finish.html'
+            //controller: 'MenuCtrl as menu'
           }
         }
       })

@@ -52,6 +52,7 @@ angular.module('main')
       options: ['yes, absolutely', 'yes, mostly', 'yes, slightly', 'No', 'none of the above']
     }
   ];
+  
   $scope.counter = parseInt($stateParams.qnum) + 1;
   if ($scope.counter > questions.length) {
     $location.path( '/main/question/graphwhy/finish' );

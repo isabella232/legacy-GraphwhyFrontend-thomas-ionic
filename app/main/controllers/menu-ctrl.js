@@ -2,7 +2,7 @@
 angular.module('main')
 .controller('MenuCtrl', function ( $scope, $http, $rootScope, $location, Facebook ) {
 
-
+ 
   $scope.loginFB = function () {
     Facebook.login(function(response){
       Facebook.getLoginStatus(function(response2) {

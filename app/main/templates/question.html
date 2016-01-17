@@ -13,10 +13,10 @@
 
       <ion-list class="list list-inset">
         <ion-radio ng-model="choice" ng-value="'A'" 
-        ng-repeat="v in question.options"
-        ui-sref="main.question({id:'graphwhy',qnum:counter})"
+        ng-repeat="v in question.answers"
+        ui-sref="main.question({id:'uptous',qnum:counter})"
         ui-sref-opts="{reload: true}"
-        >{{v}}</ion-radio>
+        >{{v.answer}}</ion-radio>
       </ion-list>
     </ion-list>
   </ion-content>

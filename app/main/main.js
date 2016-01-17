@@ -5,17 +5,13 @@ angular.module('main', [
   'ui.router',
   'facebook'
 ])
-.run( function ($rootScope) {
-
-})
-.config(function ($stateProvider, $urlRouterProvider, FacebookProvider) {
+.config(function ($stateProvider, $urlRouterProvider, FacebookProvider, $locationProvider) {
   // ROUTING with ui.router
   FacebookProvider.init('872274976224449');
-  $urlRouterProvider.otherwise('/main/profile');
+  $urlRouterProvider.otherwise('/');
   $stateProvider
     .state('main', {
-      url: '/main',
-      abstract: true,
+      abstract: false,
       templateUrl: 'main/templates/menu.html',
       controller: 'AllCtrl'
     })
@@ -47,7 +43,7 @@ angular.module('main', [
         }
       })
       .state('main.finish', {
-        url: '/question/:id/finish',
+        url: '/:id/finish',
         views: {
           'pageContent': {
             templateUrl: 'main/templates/finish.html'
@@ -56,7 +52,7 @@ angular.module('main', [
         }
       })
       .state('main.question', {
-        url: '/question/:id/:qnum',
+        url: '/:id/:qnum',
         views: {
           'pageContent': {
             templateUrl: 'main/templates/question.html',
@@ -65,7 +61,7 @@ angular.module('main', [
         }
       })
       .state('main.profile', {
-        url: '/profile',
+        url: '/',
         views: {
           'pageContent': {
             templateUrl: 'main/templates/profile.html',
@@ -73,5 +69,5 @@ angular.module('main', [
           }
         }
       });
+    $locationProvider.html5Mode(true);
 });
-

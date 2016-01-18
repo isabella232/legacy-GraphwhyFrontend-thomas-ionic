@@ -15,6 +15,15 @@ angular.module('main', [
       abstract: false,
       templateUrl: 'main/templates/menu.html',
       controller: 'AllCtrl'
+    })    
+    .state('main.results', {
+      url: '/results/:qnum',
+      views: {
+        'pageContent': {
+          templateUrl: 'main/templates/results.html',
+          controller: 'ResultsCtrl'
+        }
+      }
     })
     .state('main.finish', {
       url: '/:id/finish',
@@ -31,15 +40,6 @@ angular.module('main', [
         'pageContent': {
           templateUrl: 'main/templates/question.html',
           controller: 'QuestionCtrl'
-        }
-      }
-    })
-    .state('main.results', {
-      url: '/results',
-      views: {
-        'pageContent': {
-          templateUrl: 'main/templates/results.html',
-          controller: 'ResultsCtrl'
         }
       }
     })

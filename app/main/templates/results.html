@@ -3,14 +3,26 @@
 
     <!-- content goes here -->
     <div class="list card">
+      <div class="button-bar">
+        <a ui-sref="main.results({qnum:bakcounter})" class="button button-full button-royal">Back</a>
+        <a ui-sref="main.results({qnum:counter})" class="button button-full button-calm">Next</a>
+      </div>
+      <center>
+        <h2>{{question.title}}</h2>
+      </center>
 
     <nvd3 options="options"
       data="data"
       config="config"
       events="events"
       api="api"
-      on-ready="callback"></nvd3>
-
+      on-ready="callback"
+      ></nvd3>
+      <a ui-sref="main.results({qnum:1})" 
+      ui-sref-opts="{reload: true}"
+      class="button button-full icon-right button-balanced">
+        Share Result
+      </a>
     </div>
   </ion-content>
 </ion-view>

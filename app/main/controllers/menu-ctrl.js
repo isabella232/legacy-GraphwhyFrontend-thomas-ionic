@@ -5,16 +5,17 @@ angular.module('main')
   //var obj = Main.getQuestions();
 
   $scope.loginFB = function () {
+    $location.path( '/uptous/1' );
+    /*
     Facebook.login( function (response) {
       Facebook.getLoginStatus( function (response2) {
         if (response.status === 'connected') {
-          console.log(response2);
           $location.path( '/uptous/1' );
         } else {
-          //$location.path( '/main/question/profile' );
-          $location.path( '/uptous/1' );
+          $location.path( '/main/question/profile' );
         }
       });
     });
+    */
   };
 });

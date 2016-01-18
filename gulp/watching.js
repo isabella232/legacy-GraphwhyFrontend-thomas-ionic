@@ -3,13 +3,15 @@
 var gulp = require('gulp');
 var paths = gulp.paths;
 var options = gulp.options;
+var historyApiFallback = require('connect-history-api-fallback');
 // modules
 var bs = require('browser-sync').create();
 
 var bsInit = function (paths, openOverride) {
   var bsOptions = {
     server: {
-      baseDir: paths
+      baseDir: paths,
+      middleware: [ historyApiFallback() ]
     }
   };
   if (options.open === false) {

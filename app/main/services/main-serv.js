@@ -14,7 +14,7 @@ angular.module('main')
       that.someData.binding = initialValue;
     }, 500);
   };
-  this.getQuestions = function(){
+  this.getQuestions = function () {
     return $http.get('http://107.170.211.166:3010/api/lists/uptous');
-  }
+  };
 });

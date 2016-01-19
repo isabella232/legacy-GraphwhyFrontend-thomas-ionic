@@ -1,25 +1,26 @@
-<ion-view view-title="US National Debt">
-  <ion-content>
-
-    <!-- content goes here -->
-    <ion-list class="">
-      <ion-item
-        class="item-remove-animate item-avatar item-text-wrap"
-        type="item-text-wrap"
-        ui-sref="main.listDetail">
-        {{counter-1}}
-        <h2>{{question.title}}</h2>
-        <h3>{{question.description}}</h3>
-      </ion-item>
-
-      <ion-list class="list list-inset">
-        <ion-radio ng-model="choice" ng-value="'A'" 
-        ng-repeat="v in question.answers"
-        ui-sref="main.question({id:'uptous',qnum:counter})"
-        ui-sref-opts="{reload: true}"
-        >{{v.answer}}</ion-radio>
-      </ion-list>
-    </ion-list>
+<ion-view view-title="U.S. National Debt">
+  <ion-content class="mWidth">
+    <div class="list card">
+      <!-- content goes here -->
+      <ion-list class="list">
+        <ion-item
+          class="item-remove-animate item-avatar item-text-wrap"
+          type="item-text-wrap"
+          ui-sref="main.listDetail">
+          <br/>
+          <span class="counter">{{counter-1}}.</span>
+          <h1 class="qHeader">{{question.title}}</h1>
+          <h3>{{question.description}}</h3>
+          <br/>
+        </ion-item>
+          <ion-radio ng-model="choice" ng-value="'A'" 
+          ng-repeat="v in question.answers"
+          ui-sref="main.question({id:'uptous',qnum:counter})"
+          ui-sref-opts="{reload: true}"
+          
+          >{{v.answer}}</ion-radio>
+        </ion-list>
+      </div>
   </ion-content>
 </ion-view>
 

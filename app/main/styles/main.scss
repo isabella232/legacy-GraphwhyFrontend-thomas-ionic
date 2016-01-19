@@ -16,12 +16,48 @@ $royal:                           #8a6de9 !default;
 $dark:                            #444 !default;
 
 
+body::-webkit-scrollbar{
+  display: none;
+}
+.scroll{
+  height:none;
+}
 .pane{
 	background-color: #f1f1f1 !important;
 }
 .mWidth{
 	max-width: 500px !important;
 	margin: 0 auto;
+}
+.pGraphic{
+	display:block;
+	float:right;
+	width:150px;
+  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  /* IE 5-7 */
+  filter: alpha(opacity=85);
+  /* Netscape */
+  -moz-opacity: 0.85;
+  /* Safari 1.x */
+  -khtml-opacity: 0.85;
+  /* Good browsers */
+  opacity: 0.85;
+}
+.counter{
+  position: absolute;
+  top:20px;
+  left:18px;
+  font-weight: 700;
+  color:#555;
+  font-size: 16px;
+}
+.qHeader{
+  font-size: 24px;
+}
+.OH{
+  background-color: slategray;
+  color:#333;
 }
 
 // The path for our ionicons font files, relative to the built & temporary main.css

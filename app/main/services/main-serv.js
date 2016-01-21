@@ -15,6 +15,6 @@ angular.module('main')
     }, 500);
   };
   this.getQuestions = function () {
-    return $http.get('http://107.170.211.166:3010/api/lists/uptous');
+    return $http.get('http://107.170.211.166:3010/api/lists/U.S. National Debt Survey');
   };
 });

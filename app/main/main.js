@@ -51,6 +51,15 @@ angular.module('main', [
           controller: 'MenuCtrl'
         }
       }
+    })
+    .state('main.PPTOU', {
+      url: '/pptou',
+      views: {
+        'pageContent': {
+          templateUrl: 'main/templates/pptou.html',
+          controller: 'AllCtrl'
+        }
+      }
     });
 
 

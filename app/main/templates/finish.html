@@ -1,27 +1,33 @@
 <ion-view view-title="Graph Why">
-  <ion-content>
+  <ion-content class="mWidth">
 
     <div class="list card">
 
       <div class="item ">
         <center>
-          <h2>National debt survey</h2>
-          <p>Up to us</p>
+          <h2>U.S. national debt survey</h2>
+          <p>UP to US and De Anza College</p>
         </center>
       </div>
 
       <div class="item item-body">
         
-        <p>
-         Congrats you finished
-        </p>
+        <h2 style="color:#777;font-size:16px;padding-bottom:28px;">
+         Congrats you finished. Thank you so much taking the survey. 
+        </h2>
+        <h2>One last question: How did you get here?</h2>
+        <ion-checkbox ng-model="isChecked">Friend <br/><input class="input1" value='first and last name please'></ion-checkbox>
+
+        <ion-checkbox ng-model="isChecked1">Club<br/><input class="input1" value='which club?'></ion-checkbox>
+        <ion-checkbox ng-model="isChecked2">Flyer</ion-checkbox>
+        <ion-checkbox ng-model="isChecked3">Other<br/><input class="input1" value='first and last name please'></ion-checkbox>
         <br/></div>
       </div>
 
  
 
     </div>
-      <a ui-sref="main.results({qnum:1})" class="button button-full icon-right button-calm">Results</a>
+      <a ui-sref="main.results({qnum:1})" class="button button-full icon-right button-calm"><b>Submit / View Results</b></a>
 
   </ion-content>
 </ion-view>
